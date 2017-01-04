@@ -17,17 +17,11 @@ $(document).ready(function() {
           var northbound = data.direction[1].trip;
           
           var trips = [];
-          for (var i = 0; i < 5; i++) {
-            trips[i] = northbound[i]
-          }
-          
           var massAveStops = [];
-          for (var i = 0; i < 5; i++) {
-            massAveStops[i] = trips[i].stop[6];
-          }
-          
           var departures = [];
           for (var i = 0; i < 5; i++) {
+            trips[i] = northbound[i]
+            massAveStops[i] = trips[i].stop[6];
             departures[i] = massAveStops[i].sch_dep_dt;
           }
           

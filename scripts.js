@@ -40,6 +40,9 @@ $(document).ready(function() {
             else {
               formattedTime[i] = hours[i] + ":" + minutes[i];
             }
+            
+            $(".list").prepend("<li>" + formattedTime[i] + "</li>");
+            
           }
           console.log(formattedTime);
         }

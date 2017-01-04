@@ -23,7 +23,6 @@ $(document).ready(function() {
           var time = [];
           var hours = []
           var minutes = [];
-          var seconds = [];
           var formattedTime = [];
           
           for (var i = 0; i < 5; i++) {
@@ -34,11 +33,11 @@ $(document).ready(function() {
             time[i] = new Date(departures[i] * 1000)
             hours[i] = time[i].getHours();
             minutes[i] = time[i].getMinutes();
-            seconds[i] = time[i].getSeconds();
-            formattedTime[i] = hours[i] + ':' + minutes[i] + ':' + seconds[i];
+            formattedTime[i] = hours[i] + ':' + minutes[i];
           }
           
           console.log(time);
+          console.log(formattedTime);
         }
     });
   });

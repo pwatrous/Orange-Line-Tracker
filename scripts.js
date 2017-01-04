@@ -16,19 +16,22 @@ $(document).ready(function() {
       success: function(data) {
           var northbound = data.direction[1].trip;
           
-          var trip0 = northbound[0];
-          var trip1 = northbound[1];
-          var trip2 = northbound[2];
-          var trip3 = northbound[3];
-          var trip4 = northbound[4];
+          var trips = [];
+          for (var i = 0; i < 5; i++) {
+            trips[i] = northbound[i]
+          }
           
-          var massAve0 = trip0.stop[6];
-          var massAve1 = trip1.stop[6];
-          var massAve2 = trip2.stop[6];
-          var massAve3 = trip3.stop[6];
-          var massAve4 = trip4.stop[6];
+          var massAveStops = [];
+          for (var i = 0; i < 5; i++) {
+            massAveStops[i] = trips[i].stop[6];
+          }
           
-          console.log(massAve0);
+          var departures = [];
+          for (var i = 0; i < 5; i++) {
+            departures[i] = massAveStops[i].sch_dep_dt;
+          }
+          
+          console.log(departures);
           
         }
     });

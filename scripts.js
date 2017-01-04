@@ -33,10 +33,14 @@ $(document).ready(function() {
             time[i] = new Date(departures[i] * 1000)
             hours[i] = time[i].getHours();
             minutes[i] = time[i].getMinutes();
-            formattedTime[i] = hours[i] + ':' + minutes[i];
+            
+            if (minutes[i] < 10) {
+              formattedTime[i] = hours[i] + ":0" + minutes[i];
+            }
+            else {
+              formattedTime[i] = hours[i] + ":" + minutes[i];
+            }
           }
-          
-          console.log(time);
           console.log(formattedTime);
         }
     });

@@ -14,7 +14,22 @@ $(document).ready(function() {
       async: false,
       dataType: "json",
       success: function(data) {
-          console.log(data);
+          var northbound = data.direction[1].trip;
+          
+          var trip0 = northbound[0];
+          var trip1 = northbound[1];
+          var trip2 = northbound[2];
+          var trip3 = northbound[3];
+          var trip4 = northbound[4];
+          
+          var massAve0 = trip0.stop[6];
+          var massAve1 = trip1.stop[6];
+          var massAve2 = trip2.stop[6];
+          var massAve3 = trip3.stop[6];
+          var massAve4 = trip4.stop[6];
+          
+          console.log(massAve0);
+          
         }
     });
   });
